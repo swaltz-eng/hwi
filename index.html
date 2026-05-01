@@ -179,6 +179,35 @@
             color: #275844;
         }
 
+        .winners-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 1rem;
+        }
+
+        .winners-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 0.4rem;
+            background: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .winners-table th,
+        .winners-table td {
+            text-align: left;
+            vertical-align: top;
+            padding: 0.5rem 0.6rem;
+            border-bottom: 1px solid #edf1ef;
+            font-size: 0.92rem;
+        }
+
+        .winners-table th {
+            background: #f2fff8;
+            color: #275844;
+        }
+
         .footer {
             text-align: center;
             padding: 2.2rem 0 2.5rem;
@@ -187,7 +216,8 @@
 
         @media (max-width: 900px) {
             .cards-3,
-            .cards-2 {
+            .cards-2,
+            .winners-grid {
                 grid-template-columns: 1fr;
             }
         }
@@ -294,6 +324,70 @@
                     <li>Team A: Morgan + Riley</li>
                     <li>Team B: Casey + Drew</li>
                 </ul>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Past Winners</h2>
+            <div class="winners-grid">
+                <article class="card">
+                    <h3>Recent Era (2013-2024)</h3>
+                    <table class="winners-table">
+                        <thead>
+                            <tr>
+                                <th>Year</th>
+                                <th>Winning Team</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>2024</td><td>Kristie Dixon, Steve Dixon, Kayla Dixon, Mac Dixon</td></tr>
+                            <tr><td>2023</td><td>Pat Hergott, Bob Jones, Jay Tasker, Dave Hoag</td></tr>
+                            <tr><td>2022</td><td>Jeff Waltz, Matt Waltz, Jacob Krachinski, Jordan Krachinski</td></tr>
+                            <tr><td>2021</td><td>Ron Waltz Sr., Norm Caldwell, Steve Dixion, Mac Dixion</td></tr>
+                            <tr><td>2019</td><td>Bob Claus, Bobby Claus, Dwayne Claus, Mark Hunt</td></tr>
+                            <tr><td>2018</td><td>Judy Stoll, Brain Stoll, Mike Wisser, Sherry Wisser</td></tr>
+                            <tr><td>2017</td><td>Pat Hergott, Bob Jones, Jay Tasker, Dave Hoag</td></tr>
+                            <tr><td>2016</td><td>Ron Waltz Sr., Norm Caldwell, Steve Dixon, Kristie Dixon</td></tr>
+                            <tr><td>2015</td><td>Ron Waltz Sr., Norm Caldwell, Steve Dixon, Kristie Dixon</td></tr>
+                            <tr><td>2014</td><td>Mike Waltz, Jeff Waltz, Henry Morgan, Troy Caldwell</td></tr>
+                            <tr><td>2013</td><td>Jean Hergott, Todd Chamberlain, Denise Hammond, Tim Sell</td></tr>
+                        </tbody>
+                    </table>
+                </article>
+
+                <article class="card">
+                    <h3>Classic Era (2005-2024 Archive)</h3>
+                    <table class="winners-table">
+                        <thead>
+                            <tr>
+                                <th>Year</th>
+                                <th>Winning Team</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>2024</td><td>Todd Genske, Matt Trisdale, Matt Knope, Mike Walsh</td></tr>
+                            <tr><td>2023</td><td>Todd Genske, Matt Trisdale, Matt Knope, Mike Walsh</td></tr>
+                            <tr><td>2022</td><td>Eric Chase, Todd Dewolfe, Scot Morrison, Matt Carlisle</td></tr>
+                            <tr><td>2021</td><td>Jeremiah Hergott, Jake Neu, Adam Bouton, Will Martin</td></tr>
+                            <tr><td>2020</td><td>Todd Genske, Matt Trisdale, Matt Knope, Mike Walsh</td></tr>
+                            <tr><td>2019</td><td>Ryan Duey, Wes Korican, Chris Hammond, Pat St. Amour</td></tr>
+                            <tr><td>2018</td><td>Brad Hergott, Matt Zangi, John Leone, Jason Kovach</td></tr>
+                            <tr><td>2017</td><td>Jeremiah Hergott, Adam Bouton, Nick Deren, Mitch Sweet</td></tr>
+                            <tr><td>2016</td><td>Steve Waltz, Nate Munson, Kurt Wilson, Pat St. Amour</td></tr>
+                            <tr><td>2015</td><td>Steve Waltz, Greg Munson, Nate Munson, Kurt Wilson</td></tr>
+                            <tr><td>2014</td><td>Rick Hergott, Ruth Barthel, Bill Peet, Sharon Peet</td></tr>
+                            <tr><td>2013</td><td>Rick Hergott, Ruth Barthel, Bill Peet, Sharon Peet</td></tr>
+                            <tr><td>2012</td><td>Steve Waltz, Greg Munson, Nate Munson, Kurt Wilson</td></tr>
+                            <tr><td>2011</td><td>Steve Waltz, Greg Munson, Nate Munson, Kurt Wilson</td></tr>
+                            <tr><td>2010</td><td>Steve Waltz, Greg Munson, Nate Munson, Kurt Wilson</td></tr>
+                            <tr><td>2009</td><td>Rick Hergott, Ruth Barthel, Bill Peet, Sharon Peet</td></tr>
+                            <tr><td>2008</td><td>Brad Hergott, Paul Herbst, John Leone, Pat Sortor</td></tr>
+                            <tr><td>2007</td><td>Jeff Waltz, Mike Waltz, Ken Cook, Steve Trammel</td></tr>
+                            <tr><td>2006</td><td>Rick Hergott, Ruth Barthel, Bill Peet, Sharon Peet</td></tr>
+                            <tr><td>2005</td><td>Steve Dixon, Kristi Dixon, Wayne Carignan, Jimmy Miller</td></tr>
+                        </tbody>
+                    </table>
+                </article>
             </div>
         </section>
     </main>
