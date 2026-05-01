@@ -27,9 +27,8 @@
             font-family: "Trebuchet MS", "Segoe UI", sans-serif;
             color: var(--ink);
             background:
-                radial-gradient(circle at 15% 10%, rgba(255, 207, 92, 0.3) 0, transparent 30%),
-                radial-gradient(circle at 85% 20%, rgba(255, 138, 61, 0.2) 0, transparent 35%),
-                linear-gradient(160deg, #d8ffe9 0%, #f8fff4 50%, #fff8ec 100%);
+                radial-gradient(circle at 15% 10%, rgba(31, 107, 79, 0.12) 0, transparent 28%),
+                linear-gradient(160deg, #eef5f1 0%, #f9fcfb 50%, #f6faf8 100%);
             min-height: 100vh;
         }
 
@@ -39,7 +38,7 @@
         }
 
         .hero {
-            padding: 4.5rem 0 2.5rem;
+            padding: 4.5rem 0 2rem;
             text-align: center;
         }
 
@@ -63,52 +62,19 @@
 
         .tagline {
             font-size: clamp(1rem, 2.3vw, 1.35rem);
-            color: #335;
-            margin-bottom: 1.4rem;
+            color: #334155;
+            margin-bottom: 1rem;
         }
 
-        .hero-actions {
-            display: flex;
-            gap: 0.8rem;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-bottom: 1.1rem;
-        }
-
-        .btn {
-            border: none;
+        .event-meta {
+            max-width: 760px;
+            margin: 0.75rem auto 0;
+            background: #ffffff;
+            border: 1px solid rgba(31, 107, 79, 0.15);
             border-radius: 10px;
-            padding: 0.85rem 1.1rem;
-            font-weight: 700;
-            cursor: pointer;
-            text-decoration: none;
-            display: inline-block;
-        }
-
-        .btn-primary {
-            background: var(--green-700);
-            color: #fff;
-        }
-
-        .btn-secondary {
-            background: white;
-            color: var(--green-900);
-            border: 2px solid var(--green-700);
-        }
-
-        .btn-accent {
-            background: var(--sun);
-            color: #4c3200;
-        }
-
-        .quote {
-            margin: 1rem auto 0;
-            max-width: 660px;
-            background: #fff;
-            border: 1px dashed #9bcfae;
-            padding: 0.85rem;
-            border-radius: 10px;
-            color: #335;
+            padding: 0.8rem 1rem;
+            font-size: 0.96rem;
+            color: #334155;
         }
 
         .grid {
@@ -208,6 +174,24 @@
             color: #275844;
         }
 
+        .winners-green th {
+            background: #e7f9ee;
+            color: #1c6a43;
+        }
+
+        .winners-blue th {
+            background: #eaf2ff;
+            color: #1f4f9a;
+        }
+
+        .division-green {
+            color: #1c6a43;
+        }
+
+        .division-blue {
+            color: #1f4f9a;
+        }
+
         .footer {
             text-align: center;
             padding: 2.2rem 0 2.5rem;
@@ -227,13 +211,8 @@
     <header class="hero container">
         <span class="chip">Annual Family Golf Outing</span>
         <h1>Hergott Waltz Invitational</h1>
-        <p class="tagline">Birdies, bragging rights, and family stories for generations.</p>
-        <div class="hero-actions">
-            <a class="btn btn-primary" href="mailto:organizer@example.com?subject=HWI RSVP">RSVP Now</a>
-            <button class="btn btn-secondary" id="pairingsBtn">Generate Random Pairings</button>
-            <button class="btn btn-accent" id="quoteBtn">Motivation of the Day</button>
-        </div>
-        <p class="quote" id="quoteText">"Grip it and sip it. Family golf rule #1."</p>
+        <p class="tagline">A family golf tradition celebrating competition, sportsmanship, and legacy.</p>
+        <p class="event-meta">Hergott Waltz Invitational • Annual Family Outing • Historical Results and Weekend Highlights</p>
     </header>
 
     <main class="container">
@@ -317,22 +296,11 @@
         </section>
 
         <section class="section">
-            <h2>Generated Pairings</h2>
-            <div class="card">
-                <p>Tap "Generate Random Pairings" above for a fresh set.</p>
-                <ul id="pairingsList">
-                    <li>Team A: Morgan + Riley</li>
-                    <li>Team B: Casey + Drew</li>
-                </ul>
-            </div>
-        </section>
-
-        <section class="section">
             <h2>Past Winners</h2>
             <div class="winners-grid">
                 <article class="card">
-                    <h3>Recent Era (2013-2024)</h3>
-                    <table class="winners-table">
+                    <h3 class="division-green">Green Division</h3>
+                    <table class="winners-table winners-green">
                         <thead>
                             <tr>
                                 <th>Year</th>
@@ -356,8 +324,8 @@
                 </article>
 
                 <article class="card">
-                    <h3>Classic Era (2005-2024 Archive)</h3>
-                    <table class="winners-table">
+                    <h3 class="division-blue">Blue Division</h3>
+                    <table class="winners-table winners-blue">
                         <thead>
                             <tr>
                                 <th>Year</th>
@@ -393,51 +361,7 @@
     </main>
 
     <footer class="footer container">
-        <p>Hergott Waltz Invitational • Built with love, laughs, and a little friendly trash talk.</p>
+        <p>Hergott Waltz Invitational • Family Golf Tradition</p>
     </footer>
-
-    <script>
-        const quotes = [
-            "\"Drive for show, putt for dough, celebrate for family.\"",
-            "\"No mulligans in life, but we allow one before coffee.\"",
-            "\"Today's forecast: 100% chance of golf stories getting bigger.\"",
-            "\"Play hard, cheer louder, pass the sunscreen.\"",
-            "\"Trophy is temporary. Family legend is forever.\""
-        ];
-
-        const players = [
-            "Alex", "Jordan", "Taylor", "Riley",
-            "Morgan", "Casey", "Drew", "Sam"
-        ];
-
-        function shuffle(arr) {
-            const copy = [...arr];
-            for (let i = copy.length - 1; i > 0; i--) {
-                const j = Math.floor(Math.random() * (i + 1));
-                [copy[i], copy[j]] = [copy[j], copy[i]];
-            }
-            return copy;
-        }
-
-        document.getElementById("quoteBtn").addEventListener("click", () => {
-            const pick = quotes[Math.floor(Math.random() * quotes.length)];
-            document.getElementById("quoteText").textContent = pick;
-        });
-
-        document.getElementById("pairingsBtn").addEventListener("click", () => {
-            const mixed = shuffle(players);
-            const pairings = [];
-            for (let i = 0; i < mixed.length; i += 2) {
-                pairings.push(`Team ${String.fromCharCode(65 + i / 2)}: ${mixed[i]} + ${mixed[i + 1]}`);
-            }
-            const list = document.getElementById("pairingsList");
-            list.innerHTML = "";
-            pairings.forEach((pair) => {
-                const li = document.createElement("li");
-                li.textContent = pair;
-                list.appendChild(li);
-            });
-        });
-    </script>
 </body>
 </html>
